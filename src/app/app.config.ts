@@ -10,14 +10,17 @@ import { buckereducer } from './Store/reducers/bucket.reducer';
 import { reduce } from 'rxjs';
 import { counterreducer } from './Store/reducers/counter.reducer';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { productreducer } from './Store/e-productandbill/product.reducer';
+import { cartreducer } from './Store/e-productandbill/cart.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes), 
     provideHttpClient(withFetch()),
     provideStore({
       groceries:groceryreducer,
-      bucketitem : buckereducer
-
+      bucketitem : buckereducer,
+       products: productreducer,
+        cart: cartreducer 
     }), 
     provideState({name:'counter',reducer:counterreducer}),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),

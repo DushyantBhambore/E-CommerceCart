@@ -3,6 +3,8 @@ import { LayoutComponent } from './Component/layout/layout.component';
 import { CounterComponent } from './Component/counter/counter.component';
 import { RegisterComponent } from './Component/register/register.component';
 import { CartComponent } from './Component/cart/cart.component';
+import { ProductsComponent } from './Component/products/products.component';
+import { ECartandbillComponent } from './Component/e-cartandbill/e-cartandbill.component';
 
 export const routes: Routes = [
     {
@@ -21,6 +23,14 @@ export const routes: Routes = [
             {
                 path:'cart',
                 component:CartComponent
+            },
+            {
+                path:'product',
+                component:ProductsComponent
+            },
+            {
+                path:'ecart',
+                component:ECartandbillComponent
             }
             
         ]
